@@ -19,7 +19,7 @@
             <field name="name">Search engine</field>
         </record>
         <record model="utm.source" id="utm_source_mailing">
-            <field name="name">Mailing Partner</field>
+            <field name="name">Lead Recall</field>
         </record>
         <record model="utm.source" id="utm_source_newsletter">
             <field name="name">Newsletter</field>
@@ -52,6 +52,9 @@
         </record>
         <record model="utm.medium" id="utm_medium_facebook">
             <field name="name">Facebook Ads</field>
+        </record>
+        <record model="utm.medium" id="utm_medium_linkedin">
+            <field name="name">LinkedIn Ads</field>
         </record>
         <record model="utm.medium" id="utm_medium_television">
             <field name="name">Television</field>

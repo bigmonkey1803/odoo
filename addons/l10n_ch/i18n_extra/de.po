@@ -4,18 +4,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0c\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-14 14:10+0000\n"
-"PO-Revision-Date: 2016-12-15 14:35+0100\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2019-02-12 05:39+0000\n"
+"PO-Revision-Date: 2019-02-12 12:06+0530\n"
+"Last-Translator: didier.donze@camptocamp.com\n"
 "Language-Team: \n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"Language: de\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #. module: l10n_ch
 #: model:account.tax.template,description:l10n_ch.vat_O_exclude
@@ -65,67 +65,73 @@ msgstr "2.5% Invest."
 #. module: l10n_ch
 #: model:account.tax.template,description:l10n_ch.vat_25_invest_incl
 msgid "2.5% invest. Incl."
-msgstr "2.5% Invest. Incl."
+msgstr "2.5% Invest. Inkl."
 
 #. module: l10n_ch
-#: model:account.tax.template,description:l10n_ch.vat_38
-msgid "3.8%"
-msgstr "3.8%"
+#: model:account.tax.template,description:l10n_ch.vat_37
+msgid "3.7%"
+msgstr "3.7%"
 
 #. module: l10n_ch
-#: model:account.tax.template,description:l10n_ch.vat_38_incl
-msgid "3.8% Incl."
-msgstr "3.8% Inkl."
+#: model:account.tax.template,description:l10n_ch.vat_37_incl
+msgid "3.7% Incl."
+msgstr "3.7% Inkl."
 
 #. module: l10n_ch
-#: model:account.tax.template,description:l10n_ch.vat_38_purchase
-msgid "3.8% achat"
-msgstr "3.8% Einkauf"
+#: model:account.tax.template,description:l10n_ch.vat_37_purchase
+msgid "3.7% achat"
+msgstr "3.7% Einkauf"
 
 #. module: l10n_ch
-#: model:account.tax.template,description:l10n_ch.vat_38_purchase_incl
-msgid "3.8% achat Incl."
-msgstr "3.8% Einkauf Inkl."
+#: model:account.tax.template,description:l10n_ch.vat_37_purchase_incl
+msgid "3.7% achat Incl."
+msgstr "3.7% Einkauf Inkl."
 
 #. module: l10n_ch
-#: model:account.tax.template,description:l10n_ch.vat_38_invest
-msgid "3.8% invest"
-msgstr "3.8% Invest"
+#: model:account.tax.template,description:l10n_ch.vat_37_invest
+msgid "3.7% invest"
+msgstr "3.7% Invest."
 
 #. module: l10n_ch
-#: model:account.tax.template,description:l10n_ch.vat_38_invest_incl
-msgid "3.8% invest Incl."
-msgstr "3.8% Invest Incl."
+#: model:account.tax.template,description:l10n_ch.vat_37_invest_incl
+msgid "3.7% invest Incl."
+msgstr "3.7% Invest. Inkl."
 
 #. module: l10n_ch
-#: model:account.tax.template,description:l10n_ch.vat_80
-msgid "8.0%"
-msgstr "8.0%"
+#: model:account.tax.template,description:l10n_ch.vat_77
+msgid "7.7%"
+msgstr "7.7%"
 
 #. module: l10n_ch
-#: model:account.tax.template,description:l10n_ch.vat_80_incl
-msgid "8.0% Incl."
-msgstr "8.0% Inkl."
+#: model:account.tax.template,description:l10n_ch.vat_77_incl
+msgid "7.7% Incl."
+msgstr "7.7% Inkl."
 
 #. module: l10n_ch
-#: model:account.tax.template,description:l10n_ch.vat_80_purchase
-msgid "8.0% achat"
-msgstr "8.0% Einkauf"
+#: model:account.tax.template,description:l10n_ch.vat_77_purchase
+#: model:account.tax.template,description:l10n_ch.vat_77_purchase_reverse
+msgid "7.7% achat"
+msgstr "7.7% Einkauf"
 
 #. module: l10n_ch
-#: model:account.tax.template,description:l10n_ch.vat_80_purchase_incl
-msgid "8.0% achat Incl."
-msgstr "8.0% Einkauf Inkl."
+#: model:account.tax.template,description:l10n_ch.vat_77_purchase_return
+msgid "7.7% achat (return)"
+msgstr ""
 
 #. module: l10n_ch
-#: model:account.tax.template,description:l10n_ch.vat_80_invest
-msgid "8.0% invest."
-msgstr "8.0% Invest."
+#: model:account.tax.template,description:l10n_ch.vat_77_purchase_incl
+msgid "7.7% achat Incl."
+msgstr "7.7% Einkauf Inkl."
 
 #. module: l10n_ch
-#: model:account.tax.template,description:l10n_ch.vat_80_invest_incl
-msgid "8.0% invest. Incl."
-msgstr "8.0% Invest. Inkl."
+#: model:account.tax.template,description:l10n_ch.vat_77_invest
+msgid "7.7% invest."
+msgstr "7.7% Invest."
+
+#. module: l10n_ch
+#: model:account.tax.template,description:l10n_ch.vat_77_invest_incl
+msgid "7.7% invest. Incl."
+msgstr "7.7% Invest. Inkl."
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_4200
@@ -140,12 +146,12 @@ msgstr "Erhaltene Anzahlungen"
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1208
 msgid "Acomptes sur les marchandises commerciales"
-msgstr ""
+msgstr "Akonto auf Zwischenhandelswaren"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1218
 msgid "Acomptes sur matières premières"
-msgstr ""
+msgstr "Akonto auf Rohstoffe"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1149
@@ -180,8 +186,11 @@ msgstr "Wertberichtigungen Wertschriften"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_6800
-msgid "Amortissements et ajustements de valeur des postes sur immobilisations corporelles"
-msgstr "Abschreibungen und Wertberichtigungen auf Positionen des Anlagevermögens"
+msgid ""
+"Amortissements et ajustements de valeur des postes sur immobilisations "
+"corporelles"
+msgstr ""
+"Abschreibungen und Wertberichtigungen auf Positionen des Anlagevermögens"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1519
@@ -191,7 +200,7 @@ msgstr "Abschreibungen auf Mobiliar und Einrichtungen"
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1599
 msgid "Amortissements sur les autres immobilisations corporelles meubles"
-msgstr ""
+msgstr "Abschreibungen andere Sachanlagen"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1709
@@ -206,12 +215,13 @@ msgstr "Abschreibungen auf Geschäftsliegenschaften"
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1559
 msgid "Amortissements sur les installations de stockage"
-msgstr ""
+msgstr "Abschreibungen und Wertberichtigungen Lagereinrichtungen"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1529
 msgid "Amortissements sur les machines de bureau, inf. et syst. comm."
-msgstr "Abschreibungen auf Büromaschinen, Informatik, Kommunikationstechnologie"
+msgstr ""
+"Abschreibungen auf Büromaschinen, Informatik, Kommunikationstechnologie"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1509
@@ -232,6 +242,7 @@ msgstr "Abschreibungen auf Fahrzeuge"
 #: model:account.account.template,name:l10n_ch.ch_coa_1579
 msgid "Amortissements sur les équipements et installations"
 msgstr ""
+"Abschreibungen und Wertberichtigungen feste Einrichtungen und Installationen"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_2270
@@ -305,7 +316,9 @@ msgstr "Gewinnvortrag oder Verlustvortrag"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1850
-msgid "Capital actions, capital social, droits de participations ou capital de fondation non versés"
+msgid ""
+"Capital actions, capital social, droits de participations ou capital de "
+"fondation non versés"
 msgstr "Nicht einbezahltes Aktien-, Stamm-, Anteilschein- oder"
 
 #. module: l10n_ch
@@ -316,7 +329,7 @@ msgstr "Aktien-, Stamm-, Anteilschein- oder Stiftungskapital"
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_4521
 msgid "Charbon, briquettes, bois"
-msgstr ""
+msgstr "Kohle, Briketts, Holz"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_7010
@@ -396,22 +409,27 @@ msgstr "Noch nicht bezahlter Aufwand"
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_3803
 msgid "Commissions de tiers"
-msgstr ""
+msgstr "Provisionen an Dritte"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_4903
 msgid "Commissions obtenues sur achats"
-msgstr ""
+msgstr "Einkaufsprovisionen"
+
+#. module: l10n_ch
+#: model:ir.model,name:l10n_ch.model_res_company
+msgid "Companies"
+msgstr "Unternehmen"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1099
 msgid "Compte d'attente autre"
-msgstr ""
+msgstr "Unklare Beträge"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1091
 msgid "Compte d'attente pour salaires"
-msgstr ""
+msgstr "Lohndurchlaufkonto"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_3710
@@ -421,27 +439,27 @@ msgstr "Eigenverbrauch"
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1269
 msgid "Correction de la valeur de stocks de produits finis"
-msgstr ""
+msgstr "Wertberichtigungen fertige Erzeugnisse"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1279
 msgid "Corrections de la valeur des stock produits semi-ouvrés"
-msgstr ""
+msgstr "Wertberichtigungen unfertige Erzeugnisse"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1209
 msgid "Corrections de la valeur des stocks de marchandises"
-msgstr ""
+msgstr "Wertberichtigungen Handelswaren"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1289
 msgid "Corrections de la valeur des travaux en cours"
-msgstr ""
+msgstr "Wertberichtigungen nicht fakturierte Dienstleistungen"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1219
 msgid "Corrections de la valeur sur matières premières"
-msgstr ""
+msgstr "Wertberichtigungen Rohstoffe"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1180
@@ -462,13 +480,13 @@ msgstr "Bankverbindlichkeiten"
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_2160
 msgid "Dettes envers l'actionnaire"
-msgstr ""
+msgstr "Gesellschafterverbindlichkeiten"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_3806
 #: model:account.account.template,name:l10n_ch.ch_coa_4906
 msgid "Différences de change"
-msgstr ""
+msgstr "Währungsdifferenzen"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_2261
@@ -478,7 +496,7 @@ msgstr "Beschlossene Ausschüttungen"
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_4071
 msgid "Droits de douanes à l'importation"
-msgstr ""
+msgstr "Einfuhrzölle"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1109
@@ -498,7 +516,7 @@ msgstr "Abrechnungskonto MWST"
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_4009
 msgid "Déductions obtenues sur achats"
-msgstr ""
+msgstr "Einkaufsrabatte"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_3009
@@ -514,6 +532,11 @@ msgstr "Wasser"
 #: model:account.account.template,name:l10n_ch.ch_coa_4500
 msgid "Electricité"
 msgstr "Strom"
+
+#. module: l10n_ch
+#: model:ir.model,name:l10n_ch.model_mail_template
+msgid "Email Templates"
+msgstr ""
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_2450
@@ -533,19 +556,20 @@ msgstr "Verbindlichkeiten aus Finanzierungsleasing"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_6100
-msgid "Entretien, réparations et remplacement des inst. servant à l’exploitation"
+msgid ""
+"Entretien, réparations et remplacement des inst. servant à l’exploitation"
 msgstr "Unterhalt, Reparaturen, Ersatz mobile Sachanlagen"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1570
 msgid "Equipements et Installations"
-msgstr ""
+msgstr "Feste Einrichtungen und Installationen"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_3800
 #: model:account.account.template,name:l10n_ch.ch_coa_4900
 msgid "Escomptes"
-msgstr ""
+msgstr "Erlösminderungen"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_4530
@@ -555,27 +579,27 @@ msgstr "Benzin"
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_3804
 msgid "Frais d'encaissement"
-msgstr "Frais d'encaissement"
+msgstr "Inkassoaufwand"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_3807
 msgid "Frais d'expédition"
-msgstr "Frais d'expédition"
+msgstr "Versandkosten"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_4072
 msgid "Frais de transport à l'achat"
-msgstr "Frais de transport à l'achat"
+msgstr "Transportkosten"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_4070
 msgid "Frêts à l'achat"
-msgstr ""
+msgstr "Frachtkosten"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_4510
 msgid "Gaz"
-msgstr "Gaz"
+msgstr "Gas"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1770
@@ -646,6 +670,11 @@ msgid "Leasing immobilisations corporelles meubles"
 msgstr "Leasingaufwand mobile Sachanlagen"
 
 #. module: l10n_ch
+#: model:account.account.template,name:l10n_ch.l10nch_chart_template_liquidity_transfer
+msgid "Liquidity Transfer"
+msgstr ""
+
+#. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1520
 msgid "Machines de bureau, informatique, systèmes de communication"
 msgstr "Büromaschinen, Informatik, Kommunikationstechnologie"
@@ -691,11 +720,6 @@ msgid "Mobilier et installations"
 msgstr "Mobiliar und Einrichtungen"
 
 #. module: l10n_ch
-#: model:ir.actions.client,name:l10n_ch.action_client_l10n_ch_menu
-msgid "Open Account Dashboard Menu"
-msgstr " Buchführungsübersicht öffnen"
-
-#. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1540
 msgid "Outillages et appareils"
 msgstr "Werkzeuge und Geräte"
@@ -708,7 +732,7 @@ msgstr "Beteiligungen"
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_4086
 msgid "Pertes de matières"
-msgstr ""
+msgstr "Warenschwund"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_3805
@@ -767,7 +791,8 @@ msgstr "Noch nicht erhaltener Ertrag"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_2980
-msgid "Propres actions, parts sociales, droits de participations (poste négatif)"
+msgid ""
+"Propres actions, parts sociales, droits de participations (poste négatif)"
 msgstr "Eigene Aktien, Stammanteile oder Anteilscheine (Minusposten)"
 
 #. module: l10n_ch
@@ -793,18 +818,18 @@ msgstr "Werbeaufwand"
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_3801
 msgid "Rabais et réduction de prix"
-msgstr ""
+msgstr "Rabatte und Preisreduktionen"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_4901
 msgid "Rabais et réductions de prix"
-msgstr ""
+msgstr "Rabatte und Preisreduktionen"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_3802
 #: model:account.account.template,name:l10n_ch.ch_coa_4092
 msgid "Ristournes"
-msgstr ""
+msgstr "Rückvergütungen"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_2940
@@ -842,9 +867,124 @@ msgid "Stocks de produits semi-ouvrés"
 msgstr ""
 
 #. module: l10n_ch
-#: model:ir.ui.menu,name:l10n_ch.account_reports_ch_statements_menu
-msgid "Swiss Statements"
-msgstr "CH Bilanz- und Erfolgsrechnungen"
+#: model:account.account.tag,name:l10n_ch.vat_tag_dedouanement
+msgid "Switzerland VAT Form: 100% dédouanement (base in grid 400)"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_200
+msgid "Switzerland VAT Form: grid 200"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_220
+msgid "Switzerland VAT Form: grid 220"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_221
+msgid "Switzerland VAT Form: grid 221"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_225
+msgid "Switzerland VAT Form: grid 225"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_230
+msgid "Switzerland VAT Form: grid 230"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_235
+msgid "Switzerland VAT Form: grid 235"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_280
+msgid "Switzerland VAT Form: grid 280"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_302_a
+msgid "Switzerland VAT Form: grid 302 base"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_302_b
+msgid "Switzerland VAT Form: grid 302 tax"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_311_a
+msgid "Switzerland VAT Form: grid 311 base"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_311_b
+msgid "Switzerland VAT Form: grid 311 tax"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_342_a
+msgid "Switzerland VAT Form: grid 342 base"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_342_b
+msgid "Switzerland VAT Form: grid 342 tax"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_381_a
+msgid "Switzerland VAT Form: grid 381 base"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_381_b
+msgid "Switzerland VAT Form: grid 381 tax"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_382_a
+msgid "Switzerland VAT Form: grid 382 base"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_382_b
+msgid "Switzerland VAT Form: grid 382 tax"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_400
+msgid "Switzerland VAT Form: grid 400"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_405
+msgid "Switzerland VAT Form: grid 405"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_410
+msgid "Switzerland VAT Form: grid 410"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_415
+msgid "Switzerland VAT Form: grid 415"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.account.tag,name:l10n_ch.vat_tag_420
+msgid "Switzerland VAT Form: grid 420"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.tax.group,name:l10n_ch.tax_group_tva_0
+msgid "TVA 0%"
+msgstr "MwSt. 0%"
 
 #. module: l10n_ch
 #: model:account.tax.template,name:l10n_ch.vat_O_import
@@ -855,6 +995,11 @@ msgstr "MwSt. 0% auf Importe von Gütern und Dienstleistungen"
 #: model:account.tax.template,name:l10n_ch.vat_O_exclude
 msgid "TVA 0% exclue"
 msgstr "MwSt. 0% ausgeschlossen"
+
+#. module: l10n_ch
+#: model:account.tax.group,name:l10n_ch.tax_group_tva_25
+msgid "TVA 2.5%"
+msgstr "MwSt. 2.5%"
 
 #. module: l10n_ch
 #: model:account.tax.template,name:l10n_ch.vat_25_purchase_incl
@@ -877,44 +1022,59 @@ msgid "TVA 2.5% sur invest. et autres ch. (TR)"
 msgstr "MwSt. 2,5% auf Invest. und sonst. Aufw. (USt)"
 
 #. module: l10n_ch
-#: model:account.tax.template,name:l10n_ch.vat_38_purchase_incl
-msgid "TVA 3.8% sur achat B&S (Incl. TS)"
-msgstr "MwSt. 3,8% auf Einkäufe B&S (inkl. LSt)"
+#: model:account.tax.group,name:l10n_ch.tax_group_tva_37
+msgid "TVA 3.7%"
+msgstr "MwSt. 3,7%"
 
 #. module: l10n_ch
-#: model:account.tax.template,name:l10n_ch.vat_38_purchase
-msgid "TVA 3.8% sur achat B&S (TS)"
-msgstr "MwSt. 3,8% auf Einkäufe B&S (LSt)"
+#: model:account.tax.template,name:l10n_ch.vat_37_purchase_incl
+msgid "TVA 3.7% sur achat B&S (Incl. TS)"
+msgstr "MwSt. 3,7% auf Einkäufe B&S (inkl. LSt)"
 
 #. module: l10n_ch
-#: model:account.tax.template,name:l10n_ch.vat_38_invest_incl
-msgid "TVA 3.8% sur invest. et autres ch. (Incl. TS)"
-msgstr "MwSt. 3,8% auf Invest. und sonst. Aufw. (inkl. LSt)"
+#: model:account.tax.template,name:l10n_ch.vat_37_purchase
+msgid "TVA 3.7% sur achat B&S (TS)"
+msgstr "MwSt. 3,7% auf Einkäufe B&S (LSt)"
 
 #. module: l10n_ch
-#: model:account.tax.template,name:l10n_ch.vat_38_invest
-msgid "TVA 3.8% sur invest. et autres ch. (TS)"
-msgstr "MwSt. 3,8% auf Invest. und sonst. Aufw. (LSt)"
+#: model:account.tax.template,name:l10n_ch.vat_37_invest_incl
+msgid "TVA 3.7% sur invest. et autres ch. (Incl. TS)"
+msgstr "MwSt. 3,7% auf Invest. und sonst. Aufw. (inkl. LSt)"
 
 #. module: l10n_ch
-#: model:account.tax.template,name:l10n_ch.vat_80_purchase_incl
-msgid "TVA 8.0% sur achat B&S (Incl. TN)"
-msgstr "MwSt. 8.0% auf Einkäufe B&S (inkl. NRZ)"
+#: model:account.tax.template,name:l10n_ch.vat_37_invest
+msgid "TVA 3.7% sur invest. et autres ch. (TS)"
+msgstr "MwSt. 3,7% auf Invest. und sonst. Aufw. (LSt)"
 
 #. module: l10n_ch
-#: model:account.tax.template,name:l10n_ch.vat_80_purchase
-msgid "TVA 8.0% sur achat B&S (TN)"
-msgstr "MwSt. 8,0% auf Einkäufe B&S (NRZ)"
+#: model:account.tax.group,name:l10n_ch.tax_group_tva_77
+msgid "TVA 7.7%"
+msgstr "MwSt. 7,7%"
 
 #. module: l10n_ch
-#: model:account.tax.template,name:l10n_ch.vat_80_invest_incl
-msgid "TVA 8.0% sur invest. et autres ch. (Incl. TN)"
-msgstr "MwSt. 8,0% auf Invest. und sonst. Aufw. (inkl. NRZ)"
+#: model:account.tax.template,name:l10n_ch.vat_77_purchase_incl
+msgid "TVA 7.7% sur achat B&S (Incl. TN)"
+msgstr "MwSt. 7,7% auf Einkäufe B&S (inkl. NRZ)"
 
 #. module: l10n_ch
-#: model:account.tax.template,name:l10n_ch.vat_80_invest
-msgid "TVA 8.0% sur invest. et autres ch. (TN)"
-msgstr "MwSt. 8,0% auf Invest. und sonst. Aufw. (NRZ)"
+#: model:account.tax.template,name:l10n_ch.vat_77_purchase
+msgid "TVA 7.7% sur achat B&S (TN)"
+msgstr "MwSt. 7,7% auf Einkäufe B&S (NRZ)"
+
+#. module: l10n_ch
+#: model:account.tax.template,name:l10n_ch.vat_77_purchase_reverse
+msgid "TVA 7.7% sur achat service a l'etranger (reverse charge)"
+msgstr ""
+
+#. module: l10n_ch
+#: model:account.tax.template,name:l10n_ch.vat_77_invest_incl
+msgid "TVA 7.7% sur invest. et autres ch. (Incl. TN)"
+msgstr "MwSt. 7,7% auf Invest. und sonst. Aufw. (inkl. NRZ)"
+
+#. module: l10n_ch
+#: model:account.tax.template,name:l10n_ch.vat_77_invest
+msgid "TVA 7.7% sur invest. et autres ch. (TN)"
+msgstr "MwSt. 7,7% auf Invest. und sonst. Aufw. (NRZ)"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_2200
@@ -932,14 +1092,19 @@ msgid "TVA due a 2.5% (TR)"
 msgstr "Zu zahlende MwSt. bei 2,5% (USt)"
 
 #. module: l10n_ch
-#: model:account.tax.template,name:l10n_ch.vat_38
-msgid "TVA due a 3.8% (TS)"
-msgstr "Zu zahlende MwSt. bei 3,8% (LSt)"
+#: model:account.tax.template,name:l10n_ch.vat_37
+msgid "TVA due a 3.7% (TS)"
+msgstr "Zu zahlende MwSt. bei 3,7% (LSt)"
 
 #. module: l10n_ch
-#: model:account.tax.template,name:l10n_ch.vat_80
-msgid "TVA due a 8.0% (TN)"
-msgstr "Zu zahlende MwSt. bei 8,0% (NRZ)"
+#: model:account.tax.template,name:l10n_ch.vat_77
+msgid "TVA due a 7.7% (TN)"
+msgstr "Zu zahlende MwSt. bei 7,7% (NRZ)"
+
+#. module: l10n_ch
+#: model:account.tax.template,name:l10n_ch.vat_77_purchase_return
+msgid "TVA due a 7.7% (TN) (return)"
+msgstr ""
 
 #. module: l10n_ch
 #: model:account.tax.template,name:l10n_ch.vat_25_incl
@@ -947,14 +1112,14 @@ msgid "TVA due à 2.5% (Incl. TR)"
 msgstr "Zu zahlende MwSt. bei 2,5% (inkl. USt)"
 
 #. module: l10n_ch
-#: model:account.tax.template,name:l10n_ch.vat_38_incl
-msgid "TVA due à 3.8% (Incl. TS)"
-msgstr "Zu zahlende MwSt. bei 3,8% (inkl. LSt)"
+#: model:account.tax.template,name:l10n_ch.vat_37_incl
+msgid "TVA due à 3.7% (Incl. TS)"
+msgstr "Zu zahlende MwSt. bei 3,7% (inkl. LSt)"
 
 #. module: l10n_ch
-#: model:account.tax.template,name:l10n_ch.vat_80_incl
-msgid "TVA due à 8.0% (Incl. TN)"
-msgstr "Zu zahlende MwSt. bei 8,0% (inkl. NRZ)"
+#: model:account.tax.template,name:l10n_ch.vat_77_incl
+msgid "TVA due à 7.7% (Incl. TN)"
+msgstr "Zu zahlende MwSt. bei 7,7% (inkl. NRZ)"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1060
@@ -967,14 +1132,9 @@ msgid "Titres à long terme"
 msgstr "Wertschriften"
 
 #. module: l10n_ch
-#: model:account.account.template,name:l10n_ch.transfer_account_id
-msgid "Transferts internes"
-msgstr ""
-
-#. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1280
 msgid "Travaux en cours"
-msgstr "Unfertige Erzeugnisse"
+msgstr "Nicht fakturierte Dienstleistungen"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_3940
@@ -984,28 +1144,28 @@ msgstr "Bestandesänderungen nicht fakturierte Dienstleistungen"
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1287
 msgid "Variation de la valeur des travaux en cours"
-msgstr ""
+msgstr "Bestandesänderungen nicht fakturierte Dienstleistungen"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1277
 msgid "Variation de stock produits semi-ouvrés"
-msgstr ""
+msgstr "Bestandesänderungen unfertige Erzeugnisse"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1267
 msgid "Variation de stocks de produits finis"
-msgstr ""
+msgstr "Bestandesänderungen fertige Erzeugnisse"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1207
 #: model:account.account.template,name:l10n_ch.ch_coa_4800
 msgid "Variation des stocks de marchandises"
-msgstr ""
+msgstr "Bestandesänderungen Handelsware"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_4801
 msgid "Variation des stocks de matières premières"
-msgstr ""
+msgstr "Bestandesänderungen Rohstoffe"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_3901
@@ -1020,13 +1180,13 @@ msgstr "Bestandesänderungen unfertige Erzeugnisse"
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_1217
 msgid "Variation des stocks des matières premières"
-msgstr ""
+msgstr "Bestandesänderungen Rohstoffe"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_4008
 #: model:account.account.template,name:l10n_ch.ch_coa_4080
 msgid "Variations de stocks"
-msgstr ""
+msgstr "Inventurdifferenzen"
 
 #. module: l10n_ch
 #: model:account.account.template,name:l10n_ch.ch_coa_3200

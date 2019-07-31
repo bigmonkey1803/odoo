@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-import resource
-import res_company
+from . import resource
+from . import resource_mixin
+from . import res_company
+from . import res_users

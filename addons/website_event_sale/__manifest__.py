@@ -1,18 +1,16 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': "Online Event's Tickets",
-    'category': 'Marketing',
-    'summary': "Sell Your Event's Tickets",
-    'website': 'https://www.odoo.com/page/events',
+    'name': "Online Event Ticketing",
+    'category': 'Website',
+    'summary': "Sell event tickets online",
     'description': """
-Online Event's Tickets
-======================
-
-        """,
+Sell event tickets through eCommerce app.
+    """,
     'depends': ['website_event', 'event_sale', 'website_sale'],
     'data': [
-        'views/website_event_sale_templates.xml',
+        'data/event_data.xml',
+        'views/event_templates.xml',
         'security/ir.model.access.csv',
         'security/website_event_sale_security.xml',
     ],

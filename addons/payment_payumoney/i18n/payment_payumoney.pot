@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.saas~11c\n"
+"Project-Id-Version: Odoo Server saas~12.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-19 10:25+0000\n"
-"PO-Revision-Date: 2016-08-19 10:25+0000\n"
+"POT-Creation-Date: 2019-03-20 13:50+0000\n"
+"PO-Revision-Date: 2019-03-20 13:50+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,66 +16,70 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: payment_payumoney
-#: model:payment.acquirer,cancel_msg:payment_payumoney.payment_acquirer_payumoney
-msgid "<span><i>Cancel,</i> Your payment has been cancelled.</span>"
+#: selection:payment.acquirer,provider:0
+msgid "Adyen"
 msgstr ""
 
 #. module: payment_payumoney
-#: model:payment.acquirer,done_msg:payment_payumoney.payment_acquirer_payumoney
-msgid "<span><i>Done,</i> Your online payment has been successfully processed. Thank you for your order.</span>"
+#: selection:payment.acquirer,provider:0
+msgid "Authorize.Net"
 msgstr ""
 
 #. module: payment_payumoney
-#: model:payment.acquirer,error_msg:payment_payumoney.payment_acquirer_payumoney
-msgid "<span><i>Error,</i> Please be aware that an error occurred during the transaction. The order has been confirmed but won't be paid. Don't hesitate to contact us if you have any questions on the status of your order.</span>"
+#: selection:payment.acquirer,provider:0
+msgid "Buckaroo"
 msgstr ""
 
 #. module: payment_payumoney
-#: model:payment.acquirer,pending_msg:payment_payumoney.payment_acquirer_payumoney
-msgid "<span><i>Pending,</i> Your online payment has been successfully processed. But your order is not validated yet.</span>"
+#: selection:payment.acquirer,provider:0
+msgid "Manual Configuration"
 msgstr ""
 
 #. module: payment_payumoney
-#: model:ir.model.fields,field_description:payment_payumoney.field_payment_acquirer_payumoney_merchant_key
+#: model:ir.model.fields,field_description:payment_payumoney.field_payment_acquirer__payumoney_merchant_key
 msgid "Merchant Key"
 msgstr ""
 
 #. module: payment_payumoney
-#: model:ir.model.fields,field_description:payment_payumoney.field_payment_acquirer_payumoney_merchant_salt
+#: model:ir.model.fields,field_description:payment_payumoney.field_payment_acquirer__payumoney_merchant_salt
 msgid "Merchant Salt"
 msgstr ""
 
 #. module: payment_payumoney
-#: model:payment.acquirer,name:payment_payumoney.payment_acquirer_payumoney
+#: selection:payment.acquirer,provider:0
+msgid "Ogone"
+msgstr ""
+
+#. module: payment_payumoney
+#: selection:payment.acquirer,provider:0
+msgid "PayUlatam"
+msgstr ""
+
+#. module: payment_payumoney
+#: selection:payment.acquirer,provider:0
 msgid "PayUmoney"
 msgstr ""
 
 #. module: payment_payumoney
-#: code:addons/payment_payumoney/models/payment_transaction.py:77
-#, python-format
-msgid "PayUmoney: feedback error"
-msgstr ""
-
-#. module: payment_payumoney
-#: code:addons/payment_payumoney/models/payment_transaction.py:39
+#: code:addons/payment_payumoney/models/payment.py:108
 #, python-format
 msgid "PayUmoney: invalid shasign, received %s, computed %s, for data %s"
 msgstr ""
 
 #. module: payment_payumoney
-#: code:addons/payment_payumoney/models/payment_transaction.py:33
+#: code:addons/payment_payumoney/models/payment.py:102
 #, python-format
 msgid "PayUmoney: received data for reference %s; multiple orders found"
 msgstr ""
 
 #. module: payment_payumoney
-#: code:addons/payment_payumoney/models/payment_transaction.py:30
+#: code:addons/payment_payumoney/models/payment.py:99
 #, python-format
 msgid "PayUmoney: received data for reference %s; no order found"
 msgstr ""
 
 #. module: payment_payumoney
-#: code:addons/payment_payumoney/models/payment_transaction.py:25
+#: code:addons/payment_payumoney/models/payment.py:94
 #, python-format
 msgid "PayUmoney: received data with missing reference (%s) or pay_id (%s) or shashign (%s)"
 msgstr ""
@@ -91,7 +95,27 @@ msgid "Payment Transaction"
 msgstr ""
 
 #. module: payment_payumoney
-#: model:payment.acquirer,pre_msg:payment_payumoney.payment_acquirer_payumoney
-msgid "You will be redirected to the PayUmoney website after clicking on the payment button."
+#: selection:payment.acquirer,provider:0
+msgid "Paypal"
+msgstr ""
+
+#. module: payment_payumoney
+#: model:ir.model.fields,field_description:payment_payumoney.field_payment_acquirer__provider
+msgid "Provider"
+msgstr ""
+
+#. module: payment_payumoney
+#: selection:payment.acquirer,provider:0
+msgid "Sips"
+msgstr ""
+
+#. module: payment_payumoney
+#: selection:payment.acquirer,provider:0
+msgid "Stripe"
+msgstr ""
+
+#. module: payment_payumoney
+#: selection:payment.acquirer,provider:0
+msgid "Wire Transfer"
 msgstr ""
 

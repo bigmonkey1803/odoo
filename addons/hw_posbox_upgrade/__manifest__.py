@@ -2,18 +2,18 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'PosBox Software Upgrader',
+    'name': 'IoTBox Software Upgrader',
     'category': 'Point of Sale',
-    'website': 'https://www.odoo.com/page/point-of-sale',
+    'website': 'https://www.odoo.com/page/point-of-sale-hardware',
     'sequence': 6,
-    'summary': 'Allows to remotely upgrade the PosBox software',
+    'summary': 'Allows to remotely upgrade the IoTBox software',
     'description': """
-PosBox Software Upgrader
+IoTBox Software Upgrader
 ========================
 
-This module allows to remotely upgrade the PosBox software to a
-new version. This module is specific to the PosBox setup and environment
-and should not be installed on regular openerp servers.
+This module allows to remotely upgrade the IoTBox software to a
+new version. This module is specific to the IoTBox setup and environment
+and should not be installed on regular Odoo servers.
 
 """,
     'depends': ['hw_proxy'],

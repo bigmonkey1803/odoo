@@ -15,6 +15,7 @@ class TestEquipment(TransactionCase):
         self.equipment = self.env['maintenance.equipment']
         self.maintenance_request = self.env['maintenance.request']
         self.res_users = self.env['res.users']
+        self.maintenance_team = self.env['maintenance.team']
         self.main_company = self.env.ref('base.main_company')
         res_user = self.env.ref('base.group_user')
         res_manager = self.env.ref('maintenance.group_equipment_manager')
@@ -23,7 +24,6 @@ class TestEquipment(TransactionCase):
             name="Normal User/Employee",
             company_id=self.main_company.id,
             login="emp",
-            password="emp",
             email="empuser@yourcompany.example.com",
             groups_id=[(6, 0, [res_user.id])]
         ))
@@ -32,7 +32,6 @@ class TestEquipment(TransactionCase):
             name="Equipment Manager",
             company_id=self.main_company.id,
             login="hm",
-            password="hm",
             email="eqmanager@yourcompany.example.com",
             groups_id=[(6, 0, [res_manager.id])]
         ))
@@ -40,7 +39,7 @@ class TestEquipment(TransactionCase):
     def test_10_equipment_request_category(self):
 
         # Create a new equipment
-        equipment_01 = self.equipment.sudo(self.manager).create({
+        equipment_01 = self.equipment.with_user(self.manager).create({
             'name': 'Samsung Monitor "15',
             'category_id': self.ref('maintenance.equipment_monitor'),
             'technician_user_id': self.ref('base.user_root'),
@@ -55,9 +54,9 @@ class TestEquipment(TransactionCase):
         assert equipment_01, "Equipment not created"
 
         # Create new maintenance request
-        maintenance_request_01 = self.maintenance_request.sudo(self.user).create({
+        maintenance_request_01 = self.maintenance_request.with_user(self.user).create({
             'name': 'Resolution is bad',
-            'technician_user_id': self.user.id,
+            'user_id': self.user.id,
             'owner_user_id': self.user.id,
             'equipment_id': equipment_01.id,
             'color': 7,
@@ -72,7 +71,7 @@ class TestEquipment(TransactionCase):
         self.assertEquals(maintenance_request_01.stage_id.id, self.ref('maintenance.stage_0'))
 
         # I check that change the maintenance_request stage on click statusbar
-        maintenance_request_01.sudo(self.user).write({'stage_id': self.ref('maintenance.stage_1')})
+        maintenance_request_01.with_user(self.user).write({'stage_id': self.ref('maintenance.stage_1')})
 
         # I check that maintenance request is in the "In Progress" stage
         self.assertEquals(maintenance_request_01.stage_id.id, self.ref('maintenance.stage_1'))
@@ -91,7 +90,7 @@ class TestEquipment(TransactionCase):
 
         maintenance_request_cron = self.maintenance_request.create({
             'name': 'Need a special calibration',
-            'technician_user_id': self.user.id,
+            'user_id': self.user.id,
             'request_date': (datetime.datetime.now() + relativedelta.relativedelta(days=7)).strftime('%Y-%m-%d'),
             'maintenance_type': 'preventive',
             'owner_user_id': self.user.id,
@@ -105,3 +104,27 @@ class TestEquipment(TransactionCase):
         # As it is generating the requests for one month in advance, we should have 4 requests in total
         tot_requests = self.maintenance_request.search([('equipment_id', '=', equipment_cron.id)])
         self.assertEqual(len(tot_requests), 1, 'The cron should have generated just 1 request for the High Maintenance Monitor.')
+
+    def test_21_cron(self):
+        """ Check the creation of maintenance requests by the cron"""
+
+        team_test = self.maintenance_team.create({
+            'name': 'team_test',
+        })
+        equipment = self.equipment.create({
+            'name': 'High Maintenance Monitor because of Color Calibration',
+            'category_id': self.ref('maintenance.equipment_monitor'),
+            'technician_user_id': self.ref('base.user_root'),
+            'owner_user_id': self.user.id,
+            'assign_date': time.strftime('%Y-%m-%d'),
+            'period': 7,
+            'color': 3,
+            'maintenance_team_id': team_test.id,
+            'maintenance_duration': 3.0,
+        })
+
+        self.env['maintenance.equipment']._cron_generate_requests()
+        tot_requests = self.maintenance_request.search([('equipment_id', '=', equipment.id)])
+        self.assertEqual(len(tot_requests), 1, 'The cron should have generated just 1 request for the High Maintenance Monitor.')
+        self.assertEqual(tot_requests.maintenance_team_id.id, team_test.id, 'The maintenance team should be the same as equipment one')
+        self.assertEqual(tot_requests.duration, 3.0, 'Equipement maintenance duration is not the same as the request one')

@@ -7,7 +7,7 @@ var gui = require('point_of_sale.gui');
 var models = require('point_of_sale.models');
 var screens = require('point_of_sale.screens');
 var core = require('web.core');
-var Model = require('web.DataModel');
+var rpc = require('web.rpc');
 
 var QWeb = core.qweb;
 var _t = core._t;
@@ -60,8 +60,6 @@ var TableWidget = PosBaseWidget.extend({
         this.selected = false;
         this.moved    = false;
         this.dragpos  = {x:0, y:0};
-        this.handle_dragging = false;
-        this.handle   = null;
     },
     // computes the absolute position of a DOM mouse event, used
     // when resizing tables
@@ -94,81 +92,25 @@ var TableWidget = PosBaseWidget.extend({
         }
     },
     // drag and drop for moving the table, at drag start
-    dragstart_handler: function(event,$el,drag){
-        if (this.selected && !this.handle_dragging) {
-            this.dragging = true;
-            this.dragpos  = { x: drag.offsetX, y: drag.offsetY };
-        }
+    dragstart_handler:   function(event, ui){
+        this.dragging = true;
     },
     // drag and drop for moving the table, at drag end
-    dragend_handler:   function(){
+    dragend_handler:   function(event, ui){
         this.dragging = false;
-    },
-    // drag and drop for moving the table, at every drop movement.
-    dragmove_handler: function(event,$el,drag){
-        if (this.dragging) {
-            var dx   = drag.offsetX - this.dragpos.x;
-            var dy   = drag.offsetY - this.dragpos.y;
-
-            this.dragpos = { x: drag.offsetX, y: drag.offsetY };
-            this.moved   = true;
-
-            this.table.position_v += dy;
-            this.table.position_h += dx;
-
-            $el.css(this.table_style());
-        }
+        this.moved = true;
+        this.table.position_h = ui.position.left - this.table.width/2;
+        this.table.position_v = ui.position.top - this.table.height/2;
+        this.$el.css(this.table_style());
     },
     // drag and dropping the resizing handles
-    handle_dragstart_handler: function(event, $el, drag) {
-        if (this.selected && !this.dragging) {
-            this.handle_dragging = true;
-            this.handle_dragpos  = this.event_position(event);
-            this.handle          = drag.target;
-        }
-    },
-    handle_dragend_handler: function() {
-        this.handle_dragging = false;
-    },
-    handle_dragmove_handler: function(event) {
-        if (this.handle_dragging) {
-            var pos  = this.event_position(event);
-            var dx   = pos.x - this.handle_dragpos.x;
-            var dy   = pos.y - this.handle_dragpos.y;
-
-            this.handle_dragpos = pos;
-            this.moved   = true;
-
-            var cl     = this.handle.classList;
-
-            var MIN_SIZE = 40;  // smaller than this, and it becomes impossible to edit.
-
-            var tw = Math.max(MIN_SIZE, this.table.width);
-            var th = Math.max(MIN_SIZE, this.table.height);
-            var tx = this.table.position_h;
-            var ty = this.table.position_v;
-
-            if (cl.contains('left') && tw - dx >= MIN_SIZE) {
-                tw -= dx;
-                tx += dx;
-            } else if (cl.contains('right') && tw + dx >= MIN_SIZE) {
-                tw += dx;
-            }
-
-            if (cl.contains('top') && th - dy >= MIN_SIZE) {
-                th -= dy;
-                ty += dy;
-            } else if (cl.contains('bottom') && th + dy >= MIN_SIZE) {
-                th += dy;
-            }
-
-            this.table.width  = tw;
-            this.table.height = th;
-            this.table.position_h = tx;
-            this.table.position_v = ty;
-
-            this.$el.css(this.table_style());
-        }
+    handle_dragmove_handler: function(event, ui) {
+        this.moved = true;
+        this.table.width  = ui.size.width;
+        this.table.height = ui.size.height;
+        this.table.position_h = ui.position.left - ui.originalSize.width/2;
+        this.table.position_v = ui.position.top - ui.originalSize.height/2;
+        this.$el.css(this.table_style());
     },
     set_table_color: function(color){
         this.table.color = _.escape(color);
@@ -225,6 +167,15 @@ var TableWidget = PosBaseWidget.extend({
     select: function() {
         this.selected = true;
         this.renderElement();
+
+        this.$el.resizable({
+            handles: 'all',
+            resize: this.handle_dragmove_handler.bind(this),
+        });
+
+        this.$el.draggable({
+            stop: this.dragend_handler.bind(this),
+        });
     },
     // deselect the table (should be called via the floorplan)
     deselect: function() {
@@ -235,7 +186,6 @@ var TableWidget = PosBaseWidget.extend({
     // sends the table's modification to the server
     save_changes: function(){
         var self   = this;
-        var model  = new Model('restaurant.table');
         var fields = _.find(this.pos.models,function(model){ return model.model === 'restaurant.table'; }).fields;
 
         // we need a serializable copy of the table, containing only the fields defined on the server
@@ -248,58 +198,70 @@ var TableWidget = PosBaseWidget.extend({
         // and the id ...
         serializable_table.id = this.table.id;
 
-        model.call('create_from_ui',[serializable_table]).then(function(table_id){
-            model.query(fields).filter([['id','=',table_id]]).first().then(function(table){
-                for (var field in table) {
-                    self.table[field] = table[field];
-                }
-                self.renderElement();
+        rpc.query({
+                model: 'restaurant.table',
+                method: 'create_from_ui',
+                args: [serializable_table],
+            })
+            .then(function (table_id){
+                rpc.query({
+                        model: 'restaurant.table',
+                        method: 'search_read',
+                        args: [[['id', '=', table_id]], fields],
+                        limit: 1,
+                    })
+                    .then(function (result){
+                        var table = result[0];
+                        for (var field in table) {
+                            self.table[field] = table[field];
+                        }
+                        self.renderElement();
+                    });
+            }, function(type,err) {
+                self.gui.show_popup('error',{
+                    'title':_t('Changes could not be saved'),
+                    'body': _t('You must be connected to the internet to save your changes.'),
+                });
             });
-        }, function(err,event) {
-            self.gui.show_popup('error',{
-                'title':_t('Changes could not be saved'),
-                'body': _t('You must be connected to the internet to save your changes.'),
-            });
-            event.stopPropagation();
-            event.preventDefault();
-        });
     },
     // destroy the table.  We do not really destroy it, we set it
     // to inactive so that it doesn't show up anymore, but it still
     // available on the database for the orders that depend on it.
     trash: function(){
         var self  = this;
-        var model = new Model('restaurant.table');
-        return model.call('create_from_ui',[{'active':false,'id':this.table.id}]).then(function(table_id){
-            // Removing all references from the table and the table_widget in in the UI ...
-            for (var i = 0; i < self.pos.floors.length; i++) {
-                var floor = self.pos.floors[i];
-                for (var j = 0; j < floor.tables.length; j++) {
-                    if (floor.tables[j].id === table_id) {
-                        floor.tables.splice(j,1);
-                        break;
+        rpc.query({
+                model: 'restaurant.table',
+                method: 'create_from_ui',
+                args: [{'active':false,'id':this.table.id}],
+            })
+            .then(function (table_id){
+                // Removing all references from the table and the table_widget in in the UI ...
+                for (var i = 0; i < self.pos.floors.length; i++) {
+                    var floor = self.pos.floors[i];
+                    for (var j = 0; j < floor.tables.length; j++) {
+                        if (floor.tables[j].id === table_id) {
+                            floor.tables.splice(j,1);
+                            break;
+                        }
                     }
                 }
-            }
-            var floorplan = self.getParent();
-            for (var i = 0; i < floorplan.table_widgets.length; i++) {
-                if (floorplan.table_widgets[i] === self) {
-                    floorplan.table_widgets.splice(i,1);
+                var floorplan = self.getParent();
+                for (var i = 0; i < floorplan.table_widgets.length; i++) {
+                    if (floorplan.table_widgets[i] === self) {
+                        floorplan.table_widgets.splice(i,1);
+                    }
                 }
-            }
-            if (floorplan.selected_table === self) {
-                floorplan.selected_table = null;
-            }
-            floorplan.update_toolbar();
-            self.destroy();
-        }, function(err, event) {
-            self.gui.show_popup('error', {
-                'title':_t('Changes could not be saved'),
-                'body': _t('You must be connected to the internet to save your changes.'),
+                if (floorplan.selected_table === self) {
+                    floorplan.selected_table = null;
+                }
+                floorplan.update_toolbar();
+                self.destroy();
+            }, function(type, err) {
+                self.gui.show_popup('error', {
+                    'title':_t('Changes could not be saved'),
+                    'body': _t('You must be connected to the internet to save your changes.'),
+                });
             });
-            event.stopPropagation();
-            event.preventDefault();
-        });
     },
     get_notifications: function(){  //FIXME : Make this faster
         var orders = this.pos.get_table_orders(this.table);
@@ -333,15 +295,6 @@ var TableWidget = PosBaseWidget.extend({
         this._super();
 
         this.update_click_handlers();
-
-        this.$el.on('dragstart', function(event,drag){ self.dragstart_handler(event,$(this),drag); });
-        this.$el.on('drag',      function(event,drag){ self.dragmove_handler(event,$(this),drag); });
-        this.$el.on('dragend',   function(event,drag){ self.dragend_handler(event,$(this),drag); });
-
-        var handles = this.$el.find('.table-handle');
-        handles.on('dragstart',  function(event,drag){ self.handle_dragstart_handler(event,$(this),drag); });
-        handles.on('drag',       function(event,drag){ self.handle_dragmove_handler(event,$(this),drag); });
-        handles.on('dragend',    function(event,drag){ self.handle_dragend_handler(event,$(this),drag); });
     },
 });
 
@@ -405,14 +358,16 @@ var FloorScreenWidget = screens.ScreenWidget.extend({
     set_background_color: function(background) {
         var self = this;
         this.floor.background_color = background;
-        (new Model('restaurant.floor'))
-            .call('write',[[this.floor.id], {'background_color': background}]).fail(function(err, event){
+        rpc.query({
+                model: 'restaurant.floor',
+                method: 'write',
+                args: [[this.floor.id], {'background_color': background}],
+            })
+            .guardedCatch(function (){
                 self.gui.show_popup('error',{
                     'title':_t('Changes could not be saved'),
                     'body': _t('You must be connected to the internet to save your changes.'),
                 });
-                event.stopPropagation();
-                event.preventDefault();
             });
         this.$('.floor-map').css({"background-color": _.escape(background)});
     },
@@ -628,6 +583,14 @@ var FloorScreenWidget = screens.ScreenWidget.extend({
             this.table_widgets.push(tw);
         }
 
+        $('body').on('keyup', function (event) {
+            if (event.which === $.ui.keyCode.ESCAPE) {
+                if(self.editing) {
+                    self.toggle_editing();
+                }
+            }
+        });
+
         this.$('.floor-selector .button').click(function(event){
             self.click_floor_button(event,$(this));
         });
@@ -840,12 +803,13 @@ models.PosModel = models.PosModel.extend({
     add_new_order: function() {
         if (this.config.iface_floorplan) {
             if (this.table) {
-                _super_posmodel.add_new_order.call(this);
+                return _super_posmodel.add_new_order.call(this);
             } else {
                 console.warn("WARNING: orders cannot be created when there is no active table in restaurant mode");
+                return undefined;
             }
         } else {
-            _super_posmodel.add_new_order.apply(this,arguments);
+            return _super_posmodel.add_new_order.apply(this,arguments);
         }
     },
 
@@ -966,5 +930,12 @@ screens.define_action_button({
         return this.pos.config.iface_floorplan;
     },
 });
+
+return {
+    TableGuestsButton: TableGuestsButton,
+    TransferOrderButton:TransferOrderButton,
+    TableWidget: TableWidget,
+    FloorScreenWidget: FloorScreenWidget,
+};
 
 });
